@@ -1,9 +1,18 @@
-//insert inquirer
+//insert inquirer and fs
 const inquirer = require("inquirer");
 const fs = require("fs");
+//create objects for file path
 const path = require("path");
 const buildHTMLDirectory = path.resolve(__dirname, "html");
 const htmlFilePath = path.join(buildHTMLDirectory, "index.html");
+//require methods for each employee class
+const manager = require("./lib/Manager.js");
+const engineer = require("./lib/Engineer.js");
+const intern = require("./lib/Intern.js")
+
+module.export = manager
+module.export = engineer
+module.export = intern
 
 function createManager() {
   inquirer
