@@ -1,6 +1,6 @@
 function generateHTML(data){
 return    
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -40,5 +40,5 @@ return
         </div>
       </div>    
 </body>
-</html>
+</html>`
 }
