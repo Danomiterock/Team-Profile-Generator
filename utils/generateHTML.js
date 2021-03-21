@@ -10,29 +10,35 @@ return
     <title>/Team Profile Generator</title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Team Member Profiles</a>
 <body>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="manager">Manager</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h6 class="manager-name mb-2 text-muted">"Manager's name: " ${data.manager.name}</h6>
+          <p class="card-text">"I.D.#: ", ${data.manager.id}</p>
+          <p class="card-text">"Email: ", ${data.manager.email}</p>
+          <p class="card-text">"Office Phone Number: ", ${data.manager.officeNum}</p>
         </div>
       </div>    
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="engineer">Engineer</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="manager">Engineer</h5>
+          <h6 class="engineer-name mb-2 text-muted">"Engineer's name: " ${data.engineer.name}</h6>
+          <p class="card-text">"I.D.#: ", ${data.engineer.id}</p>
+          <p class="card-text">"Email: ", ${data.engineer.email}</p>
+          <p class="card-text">"Office Phone Number: ", ${data.engineer.gitHubUser}</p>
         </div>
-      </div>
+      </div>    
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="intern">Intern</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="manager">Intern</h5>
+          <h6 class="intern-name mb-2 text-muted">"Intern's name: " ${data.intern.name}</h6>
+          <p class="card-text">"I.D.#: ", ${data.intern.id}</p>
+          <p class="card-text">"Email: ", ${data.intern.email}</p>
+          <p class="card-text">"Office Phone Number: ", ${data.intern.schoolName}</p>
         </div>
-      </div>
+      </div>    
 </body>
 </html>
 }
