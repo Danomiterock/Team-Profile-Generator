@@ -1,8 +1,7 @@
 function generateHTML(data){
   console.log("=====");
   console.log(data);
-return    
-`<!DOCTYPE html>
+return `<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
