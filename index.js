@@ -110,7 +110,7 @@ function createIntern() {
       },
       {
         type: "input",
-        name: "internSchoolName",
+        name: "schoolName",
         message: "What is the intern's school name?",
       },
     ])
@@ -126,17 +126,6 @@ function createIntern() {
       createTeam()
     });
 }
-
-// inquirer
-//   .prompt([
-//     {
-//       name: "employee",
-//       message: "What type of employee would you like to add?",
-//       type: "list",
-//       choices: ["Engineer", "Intern", "I'm done entering employees."],
-//     },
-//   ])
-//   .then(function () {});
 
 function createTeam() {
   inquirer.prompt([{
