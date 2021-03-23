@@ -1,3 +1,5 @@
+const Engineer = require("../lib/Engineer");
+
 In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
 
 * `github`&mdash;GitHub username
