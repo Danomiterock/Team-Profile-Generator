@@ -7,7 +7,7 @@ const path = require("path");
 const jest = require("jest");
 
 const buildHTMLDirectory = path.resolve(__dirname, "html");
-const htmlFilePath = path.join(buildHTMLDirectory, "index.html");
+const htmlFilePath = path.join(buildHTMLDirectory, "teams.html");
 //require methods for each employee class
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
@@ -154,7 +154,7 @@ function createTeam() {
 
 function buildTeam() {
   console.log(members);
-  if (!fs.existsSync(buildHTMLDirectory)) fs.mkdir(buildHTMLDirectory)
+  if (!fs.existsSync(buildHTMLDirectory)) fs.mkdir(buildHTMLDirectory, () => {})
  fs.writeFile(htmlFilePath, generateHTML(members), function(error){
    if (error) console.log(error);
  });

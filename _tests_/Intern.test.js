@@ -1,9 +1,11 @@
 const Intern = require("../lib/Intern");
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
+describe("Intern", () => {
+        test("Acquires Intern's school name.", () => {
+        const e = new Intern(schoolName);
+        expect(typeof e).toBe(schoolName);
+      });
+      test("Overwrites role as 'Intern'", () => {
+        const e = new Intern(role);
+        expect(typeof e).toBe("Intern");
+      });
+    })

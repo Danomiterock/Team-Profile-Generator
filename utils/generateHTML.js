@@ -1,5 +1,5 @@
-unction generateHTML(employees) {
-  const managers = employees.filter(
+function generateHTML(employees) {
+    const managers = employees.filter(
     (employee) => employee.getRole() === "Manager"
   );
   const engineers = employees.filter(
@@ -8,8 +8,7 @@ unction generateHTML(employees) {
   const interns = employees.filter(
     (employee) => employee.getRole() === "Intern"
   );
-​
-  return `<!DOCTYPE html>
+​ return `<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -21,11 +20,11 @@ unction generateHTML(employees) {
 </head>
 <nav class="navbar navbar-dark bg-primary">Team Profile Generator</nav>
 <body> 
-<div class="card-group">
-${managers.map((manager) => renderEmployee(manager))}
-${engineers.map((engineer) => renderEmployee(engineer))}
-${interns.map((intern) => renderEmployee(intern))}
-</div>
+  <div class="card-group">
+    ${managers.map((manager) => renderEmployee(manager))}
+    ${engineers.map((engineer) => renderEmployee(engineer))}
+    ${interns.map((intern) => renderEmployee(intern))}
+  </div>
 </body>
 </html>`;
 }
@@ -53,5 +52,5 @@ function roleSpecific(employee) {
     return `<p class="card-text">"School: ", ${employee.getSchool()}</p>`;
   }
 }
-​
 module.exports = generateHTML;
+​
