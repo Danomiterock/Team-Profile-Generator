@@ -6,18 +6,19 @@ describe("Employee", () => {
       expect(typeof e).toBe("object");
     });
     test("Can set name attribute with constructor", () => {
-      const name = "Clark";
+      const name = "Jethro";
       const e = new Employee(name);
       expect(e.name).toBe(name);
     });
     test("Can set id attribute with constructor", () => {
-      const id = 77;
-      const e = new Employee("Nick", id);
+      const id = E6;
+      const e = new Employee("Sebastian", id);
       expect(e.id).toBe(id);
     });
     test("Can set email attribute with constructor", () => {
       const email = "tbeauchamp@2u.com";
-      const e = new Employee("Nick", 77, email);
+      const e = new Employee("Sebastian", E6, email);
       expect(e.email).toBe(email);
     });
   });
+});
