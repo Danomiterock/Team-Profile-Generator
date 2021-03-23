@@ -95,3 +95,13 @@ function createIntern() {
     .then((answers) => console.log(answers));
 }
 
+inquirer
+  .prompt([
+    {
+      name: "employee",
+      message: "What type of employee would you like to add?",
+      type: "list",
+      choices: ["Engineer", "Intern", "I'm done entering employees."]
+    },
+  ])
+  .then(function (){});  
