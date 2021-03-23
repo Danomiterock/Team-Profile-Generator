@@ -8,10 +8,12 @@ const jest = require("jest");
 const buildHTMLDirectory = path.resolve(__dirname, "html");
 const htmlFilePath = path.join(buildHTMLDirectory, "index.html");
 //require methods for each employee class
+const employee = require("./lib/Employee.js")
 const manager = require("./lib/Manager.js");
 const engineer = require("./lib/Engineer.js");
 const intern = require("./lib/Intern.js")
 
+module.export = employee
 module.export = manager
 module.export = engineer
 module.export = intern
