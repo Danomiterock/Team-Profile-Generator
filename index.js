@@ -3,6 +3,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 //create objects for file path
 const path = require("path");
+//create object jest for testing functionality
+const jest = require("jest");
 const buildHTMLDirectory = path.resolve(__dirname, "html");
 const htmlFilePath = path.join(buildHTMLDirectory, "index.html");
 //require methods for each employee class
