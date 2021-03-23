@@ -5,18 +5,16 @@ const fs = require("fs");
 const path = require("path");
 //create object jest for testing functionality
 const jest = require("jest");
+
 const buildHTMLDirectory = path.resolve(__dirname, "html");
 const htmlFilePath = path.join(buildHTMLDirectory, "index.html");
 //require methods for each employee class
-const employee = require("./lib/Employee.js")
-const manager = require("./lib/Manager.js");
-const engineer = require("./lib/Engineer.js");
-const intern = require("./lib/Intern.js")
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 
-module.export = employee
-module.export = manager
-module.export = engineer
-module.export = intern
+const generateHTML = require("./utils/generateHTML.js")
+const members = [];
 
 function createManager() {
   inquirer
@@ -42,7 +40,17 @@ function createManager() {
         message: "What is the manager's phone number?",
       },
     ])
-    .then((answers) => console.log(answers));
+    .then((answers) => {
+      const manager = new Manager(
+        answers.managerName,
+        answers.managerId,
+        answers.managerEmail,
+        answers.managerPhone
+      );
+      members.push(manager);
+      console.log(members);
+      createTeam()
+    });
 }
 
 function createEngineer() {
@@ -99,13 +107,49 @@ function createIntern() {
     .then((answers) => console.log(answers));
 }
 
-inquirer
-  .prompt([
-    {
-      name: "employee",
-      message: "What type of employee would you like to add?",
-      type: "list",
-      choices: ["Engineer", "Intern", "I'm done entering employees."]
-    },
-  ])
-  .then(function (){});  
+// inquirer
+//   .prompt([
+//     {
+//       name: "employee",
+//       message: "What type of employee would you like to add?",
+//       type: "list",
+//       choices: ["Engineer", "Intern", "I'm done entering employees."],
+//     },
+//   ])
+//   .then(function () {});
+
+function createTeam() {
+  inquirer.prompt([{
+    name: "memberChoices",
+    type: "list",
+    message: "What type of Employee would you like to create?",
+    choices: ["Manager", "Engineer", "Intern", "I'm done creating empoyees."]
+  }
+])
+.then(function (answers) {
+  switch (answers.memberChoices) {
+    case "Manager": 
+    createManager()      
+      break;
+      case "Engineer": 
+    createEngineer()      
+      break;
+      case "Intern": 
+    createIntern()      
+      break;
+  
+    default: buildTeam()
+   }
+});
+}
+
+function buildTeam() {
+  console.log(members);
+  if (!fs.existsSync(buildHTMLDirectory)) fs.mkdir(buildHTMLDirectory)
+ fs.writeFile(htmlFilePath, generateHTML(members), function(error){
+   if (error) console.log(error);
+ });
+ 
+}
+
+createTeam()

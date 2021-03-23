@@ -1,4 +1,6 @@
 function generateHTML(data){
+  console.log("=====");
+  console.log(data);
 return    
 `<!DOCTYPE html>
 <html lang="en-US">
@@ -42,3 +44,4 @@ return
 </body>
 </html>`
 }
+module.exports = generateHTML
