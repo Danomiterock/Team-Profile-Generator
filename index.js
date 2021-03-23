@@ -77,7 +77,17 @@ function createEngineer() {
         message: "What is the engineer's GitHub username?",
       },
     ])
-    .then((answers) => console.log(answers));
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.engineerName,
+        answers.engineerId,
+        answers.engineerEmail,
+        answers.engineerGitHub
+      );
+      members.push(engineer);
+      console.log(members);
+      createTeam()
+    });
 }
 
 function createIntern() {
@@ -104,7 +114,17 @@ function createIntern() {
         message: "What is the intern's school name?",
       },
     ])
-    .then((answers) => console.log(answers));
+    .then((answers) => {
+      const intern = new Intern(
+        answers.internName,
+        answers.internId,
+        answers.internEmail,
+        answers.schoolName
+      );
+      members.push(intern);
+      console.log(members);
+      createTeam()
+    });
 }
 
 // inquirer
