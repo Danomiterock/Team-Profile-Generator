@@ -1,46 +1,57 @@
-function generateHTML(data){
-  console.log("=====");
-  console.log(data);
-return `<!DOCTYPE html>
+unction generateHTML(employees) {
+  const managers = employees.filter(
+    (employee) => employee.getRole() === "Manager"
+  );
+  const engineers = employees.filter(
+    (employee) => employee.getRole() === "Engineer"
+  );
+  const interns = employees.filter(
+    (employee) => employee.getRole() === "Intern"
+  );
+​
+  return `<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>/Team Profile Generator</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Team Member Profiles</a>
-<body>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="manager">Manager</h5>
-          <h6 class="manager-name mb-2 text-muted">"Manager's name: " ${data.managerName}</h6>
-          <p class="card-text">"I.D.#: ", ${data.managerId}</p>
-          <p class="card-text">"Email: ", ${data.managerEmail}</p>
-          <p class="card-text">"Office Phone Number: ", ${data.managerPhone}</p>
-        </div>
-      </div>    
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="manager">Engineer</h5>
-          <h6 class="engineer-name mb-2 text-muted">"Engineer's name: " ${data.engineerName}</h6>
-          <p class="card-text">"I.D.#: ", ${data.engineerId}</p>
-          <p class="card-text">"Email: ", ${data.engineerEmail}</p>
-          <p class="card-text">"GitHub User Name: ", ${data.engineerGitHub}</p>
-        </div>
-      </div>    
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="manager">Intern</h5>
-          <h6 class="intern-name mb-2 text-muted">"Intern's name: " ${data.internName}</h6>
-          <p class="card-text">"I.D.#: ", ${data.internId}</p>
-          <p class="card-text">"Email: ", ${data.internEmail}</p>
-          <p class="card-text">"School Name: ", ${data.schoolName}</p>
-        </div>
-      </div>    
+<nav class="navbar navbar-dark bg-primary">Team Profile Generator</nav>
+<body> 
+<div class="card-group">
+${managers.map((manager) => renderEmployee(manager))}
+${engineers.map((engineer) => renderEmployee(engineer))}
+${interns.map((intern) => renderEmployee(intern))}
+</div>
 </body>
-</html>`
+</html>`;
 }
-module.exports = generateHTML
+​
+function renderEmployee(employee) {
+  return `<div class="card text-white bg-primary mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h1 class="manager">${employee.getRole()}</h1>
+    <h2 class="employee-name mb-2 text-muted">"${employee.getRole()}'s name: " ${
+    employee.name
+  }</h2>
+    <p class="card-text">"I.D.#: ", ${employee.id}</p>
+    <p class="card-text">"Email: ", ${employee.email}</p>
+    ${roleSpecific(employee)}
+  </div>
+</div>`;
+}
+​
+function roleSpecific(employee) {
+  if (employee.getRole() === "Manager") {
+    return `<p class="card-text">"Office Number: ", ${employee.getOfficeNum()}</p>`;
+  } else if (employee.getRole() === "Engineer") {
+    return `<p class="card-text">"Github: ", ${employee.getGitHub()}</p>`;
+  } else {
+    return `<p class="card-text">"School: ", ${employee.getSchool()}</p>`;
+  }
+}
+​
+module.exports = generateHTML;
