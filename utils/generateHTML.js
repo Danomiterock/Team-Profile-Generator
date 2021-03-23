@@ -16,28 +16,28 @@ return `<!DOCTYPE html>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="manager">Manager</h5>
-          <h6 class="manager-name mb-2 text-muted">"Manager's name: " ${data.manager.name}</h6>
-          <p class="card-text">"I.D.#: ", ${data.manager.id}</p>
-          <p class="card-text">"Email: ", ${data.manager.email}</p>
-          <p class="card-text">"Office Phone Number: ", ${data.manager.officeNum}</p>
+          <h6 class="manager-name mb-2 text-muted">"Manager's name: " ${data.managerName}</h6>
+          <p class="card-text">"I.D.#: ", ${data.managerId}</p>
+          <p class="card-text">"Email: ", ${data.managerEmail}</p>
+          <p class="card-text">"Office Phone Number: ", ${data.managerPhone}</p>
         </div>
       </div>    
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="manager">Engineer</h5>
-          <h6 class="engineer-name mb-2 text-muted">"Engineer's name: " ${data.engineer.name}</h6>
-          <p class="card-text">"I.D.#: ", ${data.engineer.id}</p>
-          <p class="card-text">"Email: ", ${data.engineer.email}</p>
-          <p class="card-text">"GitHub User Name: ", ${data.engineer.gitHubUser}</p>
+          <h6 class="engineer-name mb-2 text-muted">"Engineer's name: " ${data.engineerName}</h6>
+          <p class="card-text">"I.D.#: ", ${data.engineerId}</p>
+          <p class="card-text">"Email: ", ${data.engineerEmail}</p>
+          <p class="card-text">"GitHub User Name: ", ${data.engineerGitHub}</p>
         </div>
       </div>    
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="manager">Intern</h5>
-          <h6 class="intern-name mb-2 text-muted">"Intern's name: " ${data.intern.name}</h6>
-          <p class="card-text">"I.D.#: ", ${data.intern.id}</p>
-          <p class="card-text">"Email: ", ${data.intern.email}</p>
-          <p class="card-text">"School Name: ", ${data.intern.schoolName}</p>
+          <h6 class="intern-name mb-2 text-muted">"Intern's name: " ${data.internName}</h6>
+          <p class="card-text">"I.D.#: ", ${data.internId}</p>
+          <p class="card-text">"Email: ", ${data.internEmail}</p>
+          <p class="card-text">"School Name: ", ${data.schoolName}</p>
         </div>
       </div>    
 </body>
