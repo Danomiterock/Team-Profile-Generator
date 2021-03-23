@@ -28,7 +28,7 @@ return `<!DOCTYPE html>
           <h6 class="engineer-name mb-2 text-muted">"Engineer's name: " ${data.engineer.name}</h6>
           <p class="card-text">"I.D.#: ", ${data.engineer.id}</p>
           <p class="card-text">"Email: ", ${data.engineer.email}</p>
-          <p class="card-text">"Office Phone Number: ", ${data.engineer.gitHubUser}</p>
+          <p class="card-text">"GitHub User Name: ", ${data.engineer.gitHubUser}</p>
         </div>
       </div>    
       <div class="card" style="width: 18rem;">
@@ -37,7 +37,7 @@ return `<!DOCTYPE html>
           <h6 class="intern-name mb-2 text-muted">"Intern's name: " ${data.intern.name}</h6>
           <p class="card-text">"I.D.#: ", ${data.intern.id}</p>
           <p class="card-text">"Email: ", ${data.intern.email}</p>
-          <p class="card-text">"Office Phone Number: ", ${data.intern.schoolName}</p>
+          <p class="card-text">"School Name: ", ${data.intern.schoolName}</p>
         </div>
       </div>    
 </body>
