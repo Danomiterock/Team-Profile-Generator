@@ -133,7 +133,7 @@ function createTeam() {
     name: "memberChoices",
     type: "list",
     message: "What type of Employee would you like to create?",
-    choices: ["Manager", "Engineer", "Intern", "I'm done creating empoyees."]
+    choices: ["Manager", "Engineer", "Intern", "I'm done creating employees."]
   }
 ])
 .then(function (answers) {
@@ -157,7 +157,7 @@ function buildTeam() {
   console.log(members);
   
  fs.writeFile("./team.html", generate(members), function(error){
-   if (error) throw error
+   if (error) throw error;
  }); 
 }
 
