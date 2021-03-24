@@ -1,5 +1,5 @@
 function generate(employees) {
-    const managers = employees.filter(
+  const managers = employees.filter(
     (employee) => employee.getRole() === "Manager"
   );
   const engineers = employees.filter(
@@ -8,7 +8,7 @@ function generate(employees) {
   const interns = employees.filter(
     (employee) => employee.getRole() === "Intern"
   );
-​ return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -26,21 +26,23 @@ function generate(employees) {
   ${interns.map((intern) => renderEmployee(intern))}
 </div>
 </body>
-</html>`
-  }
-​
+</html>`;
+}
+
 function renderEmployee(employee) {
   return `<div class="card text-white bg-primary mb-3" style="width: 18rem;">
   <div class="card-body">
     <h1 class="manager">${employee.getRole()}</h1>
-    <h2 class="employee-name mb-2 text-muted">"${employee.getRole()}'s name: " ${employee.name}</h2>
+    <h2 class="employee-name mb-2 text-muted">"${employee.getRole()}'s name: " ${
+    employee.name
+  }</h2>
     <p class="card-text">"I.D.#: ", ${employee.id}</p>
     <p class="card-text">"Email: ", ${employee.email}</p>
     ${roleSpecific(employee)}
   </div>
 </div>`;
 }
-​
+
 function roleSpecific(employee) {
   if (employee.getRole() === "Manager") {
     return `<p class="card-text">"Office Number: ", ${employee.getOfficeNum()}</p>`;
@@ -51,5 +53,4 @@ function roleSpecific(employee) {
   }
 }
 
-module.exports = {generateHTML: generateHTML}
-​
+module.exports = generate;
