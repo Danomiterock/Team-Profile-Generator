@@ -13,7 +13,8 @@ const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 
-const generateHTML = require("./utils/generateHTML.js")
+// const generateHTML = require("./utils/generateHTML.js");
+const generate = require("./generate.js");
 const members = [];
 
 function createManager() {
@@ -154,11 +155,11 @@ function createTeam() {
 
 function buildTeam() {
   console.log(members);
-  if (!fs.existsSync(buildHTMLDirectory)) fs.mkdir(buildHTMLDirectory, () => {})
- fs.writeFile(htmlFilePath, generateHTML(members), function(error){
-   if (error) console.log(error);
- });
- 
+  
+ fs.writeFile("./team.html", generate(members), function(error){
+   if (error) throw error
+ }); 
 }
 
 createTeam()
+
