@@ -1,6 +1,30 @@
 {
+  "name": "Team-Profile-Generator",
+  "version": "1.0.0",
+  "description": "[![License](https://img.shields.io/badge/license-[object Object]-yellow.svg)](https://opensource.org/licenses/MIT) ​ ## Description ​ As a manager, I wantr to generate a webpage that displays my team's basic info so that I can have quick access to their emails and Github profiles.  ​ ## Table of Contents  ​ * [Installation](#installation) ​ * [Usage](#usage) ​ * [License](#license) ​ * [Contributing](#contributing) ​ * [Tests](#tests) ​ * [Questions](#questions) ​ ## Installation ​ To install necessary dependencies, run the following command: ​ ``` npm i ``` ​ ## Usage ​",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danomiterock/Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danomiterock/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Danomiterock/Team-Profile-Generator#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "inquirer": "^8.0.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "path": "^0.12.7"
   }
 }
